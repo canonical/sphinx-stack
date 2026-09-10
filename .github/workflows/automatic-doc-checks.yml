@@ -5,8 +5,8 @@ on:
   push:
     branches: [ main ]
   pull_request:
-    paths:
-      - 'docs/**'   # Only run on changes to the docs directory
+    branches:
+    - '*'
 
   workflow_dispatch:
     # Manual trigger
@@ -16,7 +16,13 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  # Detect changes as a job to avoid skipped workflows blocking merges
+  changes:
+    uses: ./.github/workflows/detect-docs-changes.yml
+
   documentation-checks:
+    needs: changes
+    if: needs.changes.outputs.docs == 'true'
     uses: canonical/documentation-workflows/.github/workflows/documentation-checks.yaml@main
     with:
       working-directory: "docs"

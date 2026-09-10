@@ -1,0 +1,46 @@
+name: Detect docs/** changes
+
+# Reusable workflow to determine if a push or pull request needs to run
+# checks under `docs/`.
+#
+# We deliberately do not use a `paths:` filter on the callers' triggers.
+#
+# When a workflow backing a required status check is skipped because of a
+# `paths:` filter, GitHub can't tell "skipped" apart from "hasn't run yet".
+# The check gets stuck as "Expected — Waiting for status to be reported" on PRs
+# that don't touch those paths. This blocks the merge.
+#
+# Instead, the callers are always triggered and use this to skip the majority of
+# the job (but still report a status).
+
+on:
+  workflow_call:
+    outputs:
+      docs:
+        description: "'true' if docs/** changed (or the event can't be diffed)"
+        value: ${{ jobs.detect.outputs.docs }}
+
+jobs:
+  detect:
+    runs-on: ubuntu-latest
+    outputs:
+      docs: ${{ steps.filter.outputs.docs }}
+    steps:
+    - uses: actions/checkout@v5
+      with:
+        fetch-depth: 0
+    - name: Check for changes in docs/
+      id: filter
+      run: |
+        if [ "${{ github.event_name }}" = "pull_request" ]; then
+          range="${{ github.event.pull_request.base.sha }}...${{ github.event.pull_request.head.sha }}"
+        elif [ "${{ github.event_name }}" = "push" ]; then
+          range="${{ github.event.before }}...${{ github.event.after }}"
+        else
+          range=""
+        fi
+        if [ -z "$range" ] || git diff --name-only "$range" | grep -q '^docs/'; then
+          echo "docs=true" >> "$GITHUB_OUTPUT"
+        else
+          echo "docs=false" >> "$GITHUB_OUTPUT"
+        fi

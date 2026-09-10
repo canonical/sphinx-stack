@@ -10,11 +10,15 @@ on:
   pull_request:
     branches:
     - '*'
-    paths:
-    - 'docs/**'   # Only run on changes to the docs directory
 
 jobs:
+  # Detect changes as a job to avoid skipped workflows blocking merges
+  changes:
+    uses: ./.github/workflows/detect-docs-changes.yml
+
   markdown-lint:
+    needs: changes
+    if: needs.changes.outputs.docs == 'true'
     runs-on: ubuntu-24.04
     steps:
     - uses: actions/checkout@v5

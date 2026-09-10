@@ -6,6 +6,7 @@
 * Exclude utility directories from builds and checks
 * Update link to documentation in README
 * Skip pa11y installation if it is already present
+* Fix using `markdown-lint` and `documentation-checks` as hard merge requirements
 
 ### Changed
 
@@ -14,6 +15,8 @@
 * `README.md` [#603](https://github.com/canonical/sphinx-stack/pull/603)
 * `.github/workflows/cla-check.yml` [#606](https://github.com/canonical/sphinx-stack/pull/606)
 * `.github/workflows/check-removed-urls.yml` [#612](https://github.com/canonical/sphinx-stack/pull/#612)
+* `.github/workflows/automatic-doc-checks.yml` [#633](https://github.com/canonical/sphinx-stack/pull/633)
+* `.github/workflows/markdown-style-checks.yml` [#633](https://github.com/canonical/sphinx-stack/pull/633)
 
 ## 2.0
 
