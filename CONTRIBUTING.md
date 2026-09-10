@@ -80,11 +80,11 @@ The Sphinx Stack follows a modified [Semantic Versioning 2.0](https://semver.org
 
 ### Major version
 
-A major version increment signifies one or more changes that, if ignored or overridden, would greatly affect the quality of the documentation or the project’s compatibility with subsequent versions. Breaking changes are introduced in major versions only. These changes are mandatory and often require significant effort by the user to incorporate. Changes warranting a major version increment must be planned and implemented by maintainers.
+A major version increment signifies one or more changes that, if ignored or overridden, would greatly affect the quality of the documentation or the project’s compatibility with subsequent versions. These changes are necessary and often require significant effort by the user to incorporate. Breaking changes are introduced in major versions only. Changes warranting a major version increment must be planned and implemented by maintainers.
 
 #### Breaking changes
 
-In order to minimize disruptions caused by breaking changes, there should be a migration path 
+To minimize disruptions caused by breaking changes, there should be a migration path 
 provided where possible. The Sphinx Stack project aims to deprecate features being 
 removed at least one release prior to removal. Breaking change PRs are labeled with `Awaiting release` once approved and are only merged at the next major release.
 
