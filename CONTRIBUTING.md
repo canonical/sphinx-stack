@@ -85,8 +85,9 @@ A major version increment signifies one or more changes that, if ignored or over
 #### Breaking changes
 
 To minimize disruptions caused by breaking changes, there should be a migration path 
-provided where possible. The Sphinx Stack project aims to deprecate features being 
-removed at least one release prior to removal. Breaking change PRs are labeled with `Awaiting release` once approved and are only merged at the next major release.
+provided where possible. The Sphinx Stack project aims to deprecate features at least 
+one major release before their removal. Breaking change PRs are labeled with
+`Awaiting release` once approved and are only merged at the next major release.
 
 In cases where there is a need to address a serious security vulnerability or critical 
 product bug, maintainers may merge a breaking change without prior notice, assessed on a 
@@ -389,4 +390,4 @@ Reviewers may request:
 
 A maintainer approval is needed before any PR can be merged. Approved PRs are squashed and merged.
 
-Breaking changes follow a different merge timeline, see [Breaking changes](#breaking-changes).
+Breaking changes follow a different merge timeline, described in [Breaking changes](#breaking-changes).
