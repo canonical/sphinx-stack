@@ -11,8 +11,7 @@ Common contributions include:
   style rules
 - Dependency updates: Security patches, compatibility fixes, better tooling
 
-If you run into any problems or see room for improvement, we encourage you to open an
-issue or even contribute a fix.
+If you run into any problems or see room for improvement, we encourage you to open an issue or even contribute a fix.
 
 > This guide only covers contributions to development. If you're interested in
 > contributing to the Sphinx Stack documentation, refer to the [documentation
@@ -31,7 +30,7 @@ Canonical expect good conduct and excellence from every member.
 
 ### Canonical Contributor License Agreement
 
-Code contributions can only be accepted from contributors who have signed our
+Code contributions can only be accepted from contributors who have signed the
 [Contributor License Agreement (CLA)](https://ubuntu.com/legal/contributors). Signing
 the agreement grants Canonical permission to use your contributions, and you remain the
 copyright owner of your work (no copyright assignment occurs).
@@ -75,6 +74,37 @@ documentation projects.
 When in doubt, open an issue first to discuss whether the change aligns with the
 project's goals.
 
+## Versioning
+
+The Sphinx Stack follows a modified [Semantic Versioning 2.0](https://semver.org). 
+
+### Major version
+
+A major version increment signifies one or more changes that, if ignored or overridden, would greatly affect the quality of the documentation or the project’s compatibility with subsequent versions. These changes are necessary and often require significant effort by the user to incorporate. Breaking changes are introduced in major versions only. Changes warranting a major version increment must be planned and implemented by maintainers.
+
+#### Breaking changes
+
+To minimize disruptions caused by breaking changes, there should be a migration path 
+provided where possible. The Sphinx Stack project aims to deprecate features at least 
+one major release before their removal. Breaking change PRs are labeled with
+`Awaiting release` once approved and are only merged at the next major release.
+
+In cases where there is a need to address a serious security vulnerability or critical 
+product bug, maintainers may merge a breaking change without prior notice, assessed on a 
+case-by-case basis and communicated in the release notes.
+
+### Minor version
+
+A minor version increment signifies a new optional feature that users can choose to adopt. If ignored, these changes will not negatively affect documentation quality or compatibility with subsequent versions.
+
+These changes can require action from the user, but are trivial to incorporate.
+
+### Patch version
+
+While patch releases aren’t tagged in this versioning policy, hotfixes are still accounted for. Every commit to the `main` branch is effectively a patch release.
+
+These changes correct existing behavior or information and are trivial to incorporate.
+
 ## Development setup
 
 Create a [personal fork](https://github.com/canonical/sphinx-stack/fork) of
@@ -110,25 +140,19 @@ make html
 
 ## Contribute a change
 
-### Research the topic
+### Link to an issue
 
-All significant work should be tied to an existing issue. Before starting, comment on
-the issue to have it assigned to you.
+All work should be tied to an existing issue. See [Report an issue or open a
+request](#report-an-issue-or-open-a-request) to find or open one. Once you're ready to
+start, comment on the issue to have it assigned to you.
 
-#### Minor changes
-
-Check [GitHub issues](https://github.com/canonical/sphinx-stack/issues) for
-existing reports. If none exist, [open
-one](https://github.com/canonical/sphinx-stack/issues/new/choose) and state
-your interest in working on it.
-
-#### Major changes
-
-Describe your proposal in the issue thread, including the plan, tests, and
+For significant changes, describe your proposal in the issue thread, including the plan, tests, and
 documentation. For new documentation pages, propose a [Diátaxis](https://diataxis.fr)
 category.
 
 ### Create a development branch
+
+`main` is the default branch and is protected. All changes are introduced through a pull request.
 
 Sync and create a new branch:
 
@@ -139,6 +163,8 @@ git checkout -b <new-branch-name>
 
 Name your branch `<ticket-id>-<description>` (e.g., `issue-235-add-string-sanitizer`),
 keeping it under 80 characters.
+
+Create a new branch for each task. Once a branch has been merged, don't recreate it or push further commits to it.
 
 ### Make your changes
 
@@ -186,7 +212,7 @@ All commits require cryptographic signatures ([DCO
 `git commit` command from the previous section, for example:
 
 ```bash
-git commit -S -m "feat: add logging levels to updage script"
+git commit -S -m "feat: add logging levels to update script"
 ```
 
 Signed commits display a "Verified" badge in GitHub. Set up signing via [GitHub Docs -
@@ -251,7 +277,7 @@ make run
 This documentation is sourced from
 [canonical/sphinx-stack-docs](https://github.com/canonical/sphinx-stack-docs) and uses
 [Diátaxis](https://diataxis.fr). For small changes, update existing how-to guides and
-references. For major changes or new flows, create new pages
+references. For significant changes or new flows, create new pages
 in the appropriate category.
 
 Run the same basic checks locally that GitHub runs on PRs; see [Test the
@@ -279,6 +305,7 @@ Your PR should include the following details:
 - Relevant issues: [Link related issues and PRs](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls)
 - Testing: How reviewers can verify the change or test the fix
 - Reversibility: For costly-to-reverse decisions, explain reasoning and reversal steps
+- Labels: Categorize the changes by adding the relevant labels e.g. `bug`, `documentation`, `breaking change` 
 
 ## CI/CD pipeline
 
@@ -323,7 +350,7 @@ branches should ensure they have signed the CLA before their changes are merged 
 ### Checks on changes to `docs/` only
 
 - Markdown style check: Runs `pymarkdownlnt` on Markdown files
-- Automatic documentation checks: Runs upstream documentation workflow checks.The
+- Automatic documentation checks: Runs upstream documentation workflow checks. The
   project uses
   [canonical/documentation-workflows](https://github.com/canonical/documentation-workflows)
   for automatic documentation checks. To modify this part of CI behavior, pass inputs to
@@ -336,7 +363,7 @@ branches should ensure they have signed the CLA before their changes are merged 
 
 ## Review process
 
-PRs are typically reviewed within a week.
+PRs are reviewed based on priority but are typically reviewed within a week. 
 
 ### Responding to feedback
 
@@ -358,3 +385,9 @@ Reviewers may request:
 - Cross-references: Use proper reST or MyST syntax
 - Examples: Start minimal, then show options; include verification steps
 - Theme compatibility: Test in both light and dark modes
+
+### Merging
+
+A maintainer approval is needed before any PR can be merged. Approved PRs are squashed and merged.
+
+Breaking changes follow a different merge timeline, described in [Breaking changes](#breaking-changes).

@@ -6,6 +6,7 @@
 * Exclude utility directories from builds and checks
 * Update link to documentation in README
 * Skip pa11y installation if it is already present
+* Update `CONTRIBUTING.md` to include versioning and breaking changes policy 
 
 ### Changed
 
@@ -14,6 +15,7 @@
 * `README.md` [#603](https://github.com/canonical/sphinx-stack/pull/603)
 * `.github/workflows/cla-check.yml` [#606](https://github.com/canonical/sphinx-stack/pull/606)
 * `.github/workflows/check-removed-urls.yml` [#612](https://github.com/canonical/sphinx-stack/pull/#612)
+* `CONTRIBUTING.md` [#632](https://github.com/canonical/sphinx-stack/pull/632)
 
 ## 2.0
 
