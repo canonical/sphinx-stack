@@ -18,13 +18,18 @@ jobs:
           # ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
           path: compare
-      - name: Checkout base branch
-        uses: actions/checkout@v5
-        with:
-          ref: ${{ github.event.pull_request.base.ref }}
-          repository: ${{ github.event.pull_request.base.repo.full_name }}
-          fetch-depth: 0
-          path: base
+      - name: Check out merge base in a worktree
+        working-directory: compare
+        run: |
+          # pull_request.base.ref is the target branch (e.g. main); its tip
+          # may include changes made after the PR diverged
+          #  (merge_base)
+          #       A --- B --- C  [main] (Tip of main)
+          #      /
+          #     /
+          #    D --- E           [my-branch] (Tip of my-branch)
+          merge_base=$(git merge-base HEAD "origin/${{ github.event.pull_request.base.ref }}")
+          git worktree add --detach ../base "$merge_base"
       - name: Checkout sphinx-stack
         uses: actions/checkout@v5
         with:

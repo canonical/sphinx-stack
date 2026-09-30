@@ -7,7 +7,8 @@
 * Update link to documentation in README
 * Exclude `_build` dir when linting Markdown
 * Skip pa11y installation if it is already present
-* Update `CONTRIBUTING.md` to include versioning and breaking changes policy 
+* Update `CONTRIBUTING.md` to include versioning and breaking changes policy
+* Fix false-positives in the check-removed-urls workflow
 
 ### Changed
 
@@ -15,7 +16,7 @@
 * `docs/Makefile` [#605](https://github.com/canonical/sphinx-stack/pull/605), [#610](https://github.com/canonical/sphinx-stack/pull/610), [#627](https://github.com/canonical/sphinx-stack/pull/627), [#628](https://github.com/canonical/sphinx-stack/pull/628)
 * `README.md` [#603](https://github.com/canonical/sphinx-stack/pull/603)
 * `.github/workflows/cla-check.yml` [#606](https://github.com/canonical/sphinx-stack/pull/606)
-* `.github/workflows/check-removed-urls.yml` [#612](https://github.com/canonical/sphinx-stack/pull/#612)
+* `.github/workflows/check-removed-urls.yml` [#612](https://github.com/canonical/sphinx-stack/pull/#612) [#636](https://github.com/canonical/sphinx-stack/pull/636)
 * `CONTRIBUTING.md` [#632](https://github.com/canonical/sphinx-stack/pull/632)
 
 ## 2.0
