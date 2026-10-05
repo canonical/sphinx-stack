@@ -116,11 +116,7 @@ lint-md: pymarkdownlnt-install
 	@. $(DOCS_VENV); pymarkdownlnt \
 		--config $(DEV_DIR)/.pymarkdown.json \
 		--return-code-scheme explicit \
-		scan \
-			--recurse \
-			--exclude=$(DEV_DIR)/** \
-			--exclude=$(DOCS_VENVDIR)/** \
-			$(DOCS_SOURCEDIR); \
+		scan --recurse $(CHECK_PATH); \
 	status=$$?; \
 	if [ $$status -eq 1 ]; then \
 		echo "No Markdown files selected for linting"; \
