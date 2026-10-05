@@ -8,10 +8,11 @@
 * Exclude `_build` dir when linting Markdown
 * Skip pa11y installation if it is already present
 * Update `CONTRIBUTING.md` to include versioning and breaking changes policy 
+* Remove extensions deprecated in 2.0
 
 ### Changed
 
-* `docs/conf.py` [#610](https://github.com/canonical/sphinx-stack/pull/610)
+* `docs/conf.py` [#610](https://github.com/canonical/sphinx-stack/pull/610), * `docs/requirements.txt` [#634](https://github.com/canonical/sphinx-stack/pull/634)
 * `docs/Makefile` [#605](https://github.com/canonical/sphinx-stack/pull/605), [#610](https://github.com/canonical/sphinx-stack/pull/610), [#627](https://github.com/canonical/sphinx-stack/pull/627), [#628](https://github.com/canonical/sphinx-stack/pull/628)
 * `docs/requirements.txt` [#634](https://github.com/canonical/sphinx-stack/pull/634)
 * `README.md` [#603](https://github.com/canonical/sphinx-stack/pull/603)
