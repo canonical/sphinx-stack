@@ -8,15 +8,17 @@
 * Exclude `_build` dir when linting Markdown
 * Skip pa11y installation if it is already present
 * Update `CONTRIBUTING.md` to include versioning and breaking changes policy 
+* Update and pin CI actions
 
 ### Changed
 
 * `docs/conf.py` [#610](https://github.com/canonical/sphinx-stack/pull/610)
 * `docs/Makefile` [#605](https://github.com/canonical/sphinx-stack/pull/605), [#610](https://github.com/canonical/sphinx-stack/pull/610), [#627](https://github.com/canonical/sphinx-stack/pull/627), [#628](https://github.com/canonical/sphinx-stack/pull/628)
 * `README.md` [#603](https://github.com/canonical/sphinx-stack/pull/603)
-* `.github/workflows/cla-check.yml` [#606](https://github.com/canonical/sphinx-stack/pull/606)
-* `.github/workflows/check-removed-urls.yml` [#612](https://github.com/canonical/sphinx-stack/pull/#612)
-* `CONTRIBUTING.md` [#632](https://github.com/canonical/sphinx-stack/pull/632)
+* `.github/workflows/cla-check.yml` [#606](https://github.com/canonical/sphinx-stack/pull/606), [#648](https://github.com/canonical/sphinx-stack/pull/648)
+* `.github/workflows/check-removed-urls.yml` [#612](https://github.com/canonical/sphinx-stack/pull/#612), [#648](https://github.com/canonical/sphinx-stack/pull/648)
+* `.github/workflows/markdown-style-checks.yml` [#648](https://github.com/canonical/sphinx-stack/pull/648)
+* `.github/workflows/sphinx-python-dependency-build-checks.yml` [#648](https://github.com/canonical/sphinx-stack/pull/648)
 
 ## 2.0
 
