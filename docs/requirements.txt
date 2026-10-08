@@ -3,7 +3,7 @@ canonical-sphinx~=0.7
 
 # Extensions previously auto-loaded by canonical-sphinx
 myst-parser~=4.0    # v5.0.0 causes version conflicts
-sphinx-autobuild==2025.08.25
+sphinx-autobuild==2024.10.3
 sphinx-design==0.6.1
 sphinx-notfound-page~=1.1
 sphinxcontrib-jquery~=4.1
