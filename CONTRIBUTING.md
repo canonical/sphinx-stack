@@ -349,17 +349,16 @@ branches should ensure they have signed the CLA before their changes are merged 
 
 ### Checks on changes to `docs/` only
 
-- Markdown style check: Runs `pymarkdownlnt` on Markdown files
-- Automatic documentation checks: Runs upstream documentation workflow checks. The
-  project uses
-  [canonical/documentation-workflows](https://github.com/canonical/documentation-workflows)
-  for automatic documentation checks. To modify this part of CI behavior, pass inputs to
-  upstream workflows rather than creating or customizing local copies.
+- Spelling check: Checks spelling in the documentation with Vale
+- Link check: Check external links in the documentation with the Sphinx `linkcheck`
+  builder
+- Inclusive language check: Ensure the documentation uses inclusive language with Vale
+- Markdown style check: Lint the Markdown source with `pymarkdownlnt`
 
 ### Optional checks (allowed to fail)
 
-- Style guide check (`vale`): Checks compliance with the Canonical style guide
-- Accessibility check (`pa11y`): Checks accessibility of generated HTML
+- Style guide check: Checks compliance with the Canonical style guide with Vale
+- Accessibility check: Checks the accessibility of generated HTML with Pa11y
 
 ## Review process
 
