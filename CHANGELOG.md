@@ -17,7 +17,6 @@
 * `.github/workflows/automatic-doc-checks.yml` [#642](https://github.com/canonical/sphinx-stack/pull/642)
 * `.github/workflows/cla-check.yml` [#606](https://github.com/canonical/sphinx-stack/pull/606)
 * `.github/workflows/check-removed-urls.yml` [#612](https://github.com/canonical/sphinx-stack/pull/#612)
-* `CONTRIBUTING.md` [#632](https://github.com/canonical/sphinx-stack/pull/632), [#642](https://github.com/canonical/sphinx-stack/pull/642)
 
 ## 2.0
 
