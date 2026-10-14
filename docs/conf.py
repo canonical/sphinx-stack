@@ -20,18 +20,14 @@ import textwrap
 #######################
 
 # Project name
-# TODO: Update with the official name of your project or product (e.g., "Ubuntu Server")
-project = "Project"
+# TODO: Update with the official name of your project (e.g., "LXD documentation")
+project = "Project documentation"
 
 # Author name; used in the default copyright statement in the page footer
 author = "Canonical Ltd."
 
 # The year in the copyright statement
 copyright = f"{datetime.date.today().year}"
-
-# Sidebar documentation title
-# To disable the title, set it to an empty string.
-html_title = project + " documentation"
 
 # Documentation website URL
 ogp_site_url = os.environ.get("READTHEDOCS_CANONICAL_URL", "/")
@@ -48,45 +44,29 @@ ogp_image = "https://assets.ubuntu.com/v1/cc828679-docs_illustration.svg"
 # TODO: To customise the favicon, uncomment and update the next line.
 # html_favicon = "_static/favicon.png"
 
-# Dictionary of values to pass into the Sphinx context for all pages:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_context
+# The theme for the HTML output
+html_theme = "ulwazi"
+
+# Dictionary of values to pass into every page's template.
 html_context = {
-    # Product page URL; can be different from product docs URL
-    # TODO: Change to your product website URL, dropping the 'https://' prefix (e.g.,
-    #       'ubuntu.com/lxd'). If there's no such website, remove the {{ product_page }}
-    #       link from the _templates/header.html file.
-    "product_page": "",
-    # Product tag image; the orange part of your logo, shown in the page header
-    # TODO: To add a tag image, uncomment and update as needed.
-    # 'product_tag': '_static/tag.png',
-    # Your Discourse instance URL
-    # TODO: Change to your Discourse instance URL or leave empty.
+    # Community links for the 'Resources' dropdown menu.
+    # TODO: Add links your project's community platforms or leave empty to hide
     "discourse": "",
-    # Your Mattermost channel URL
-    # TODO: Change to your Mattermost channel URL or leave empty.
     "mattermost": "",
-    # Your Matrix channel URL
-    # TODO: Change to your Matrix channel URL or leave empty.
     "matrix": "",
-    # Your documentation GitHub repository URL If set, links for viewing the
-    # documentation source files and creating GitHub issues are added at the bottom of
-    # each page.
-    # TODO: Change to your documentation GitHub repository URL or leave empty.
     "github_url": "",
-    # Docs branch in the repo; used in links for viewing the source files
-    "repo_default_branch": "main",
-    # Docs location in the repo; used in links for viewing the source files
-    "repo_folder": "/docs/",
-    # TODO: To enable or disable the Previous / Next buttons at the bottom of pages
-    # Valid options: none, prev, next, both
-    # "sequential_nav": "",
-    # TODO: To enable listing contributors on individual pages, set to True
-    "display_contributors": False,
-    # Required for feedback button
-    "github_issues": "enabled",
-    # Passes the top-level 'author' value to the theme
-    "author": author,
-    # Documentation license information
+    # TODO: Uncomment to enable the navigation buttons at the bottom of pages
+    # Valid options are 'none' (default), 'prev', 'next', 'both'
+    # "sequential_nav": "both",
+    # Feedback button configuration (uses `github_url` if set)
+    "feedback": True,
+    # Brand configuration for the leftmost entry in the banner
+    # TODO: If your project falls under a different product page, update the title, URL,
+    #       and logo if necessary.
+    "logo_title": "Canonical",
+    "logo_link_URL": "https://canonical.com",
+    "logo_img_URL": "https://assets.ubuntu.com/v1/82818827-CoF_white.svg",
+    # License information to be rendered in the footer
     "license": {
         # TODO: Specify your project's license.
         # For the name, we recommend using the standard shorthand identifier from
@@ -95,23 +75,20 @@ html_context = {
         # TODO: Link directly to your project's license statement.
         "url": "",
     },
+    # Pass the top-level 'author' value to the HTML base template
+    "author": author,
+    "footer": {
+        "license": True,
+        # TODO: Uncomment if your project collects Google Analytics
+        # "entries": [
+        #     '<a class="js-revoke-cookie-manager" href="#tracker-settings">',
+        #     "Manage your tracker settings</a>",
+        # ],
+    },
+    # Google Analytics tag
+    # TODO: Uncomment if your project collects Google Analytics
+    # "tag_id": "GTM-KNX3CJC",
 }
-
-# TODO: To enable the edit button on pages, uncomment and change the link to a
-# public repository on GitHub or Launchpad. Any of the following link domains
-# are accepted:
-# - https://github.com/example-org/example"
-# - https://launchpad.net/example
-# - https://git.launchpad.net/example
-#
-# html_theme_options = {
-# 'source_edit_link': 'https://github.com/canonical/sphinx-stack',
-# }
-
-# Project slug
-# TODO: If your documentation is hosted on https://documentation.ubuntu.com/,
-#       uncomment and set to the RTD slug.
-# slug = ''
 
 #######################
 # Sitemap configuration: https://sphinx-sitemap.readthedocs.io/
@@ -140,7 +117,6 @@ sitemap_excludes = [
 ################################
 
 # html_static_path = ["_static"]
-# templates_path = ["_templates"]
 
 #############
 # Redirects #
@@ -216,8 +192,8 @@ linkcheck_retries = 3
 # Custom Sphinx extensions; see
 # https://www.sphinx-doc.org/en/master/usage/extensions/index.html
 extensions = [
-    "canonical_sphinx",
-    "notfound.extension",
+    "ulwazi",
+    "myst_parser",
     "sphinx_design",
     "sphinx_rerediraffe",
     "sphinx_reredirects",
@@ -228,6 +204,7 @@ extensions = [
     "sphinx_contributor_listing",
     "sphinx_filtered_toctree",
     "sphinx_llm.txt",
+    "sphinx_modern_pdf_style",
     "sphinx_related_links",
     "sphinx_roles",
     "sphinx_terminal",
@@ -259,6 +236,14 @@ exclude_patterns = [
 # Appends extra markup to the end of every document written in reST
 # rst_epilog = """
 # """
+
+# Project slug
+# TODO: Set to your project slug. If your docs were hosted at
+# https://canonical.com/juju/docs/ops, you'd set this to "juju/docs/ops".
+slug = ""
+
+# Enable PDF builds
+set_modern_pdf_config = True
 
 # Feedback button at the top; enabled by default
 # TODO: Disable the button if your project is unsuitable for public feedback.
