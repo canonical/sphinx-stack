@@ -7,7 +7,6 @@
 * Update link to documentation in README
 * Exclude `_build` dir when linting Markdown
 * Skip pa11y installation if it is already present
-* Update `CONTRIBUTING.md` to include versioning and breaking changes policy 
 
 ### Changed
 
