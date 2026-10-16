@@ -1,5 +1,5 @@
-# Canonical theme (still needed for Furo theme and custom templates)
-ulwazi@git+https://github.com/canonical/ulwazi@work/banner-project-link
+# Ulwazi theme; allow updates within the 1.0.x series
+ulwazi~=1.0.1
 
 # Extensions previously auto-loaded by canonical-sphinx
 myst-parser~=4.0    # v5.0.0 causes version conflicts
