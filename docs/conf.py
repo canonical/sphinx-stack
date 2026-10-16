@@ -28,6 +28,9 @@ author = "Canonical Ltd."
 # The year in the copyright statement
 copyright = f"{datetime.date.today().year}"
 
+# String appended to the title of individual HTML pages
+html_title = project
+
 # Documentation website URL
 ogp_site_url = os.environ.get("READTHEDOCS_CANONICAL_URL", "/")
 
