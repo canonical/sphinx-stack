@@ -56,7 +56,7 @@ html_context = {
     "discourse": "",
     "mattermost": "",
     "matrix": "",
-    "github_url": "https://github.com/canonical/sphinx-stack",
+    "github_url": "",
     # Feedback and edit/view links require a valid `github_url`.
     # TODO: Set to False to hide feedback and page controls.
     "feedback": True,
@@ -67,6 +67,7 @@ html_context = {
     "logo_link_URL": "https://canonical.com",
     "logo_img_URL": "https://assets.ubuntu.com/v1/82818827-CoF_white.svg",
     # License information to be rendered in the footer
+    "author": author,
     "license": {
         # TODO: Specify your project's license.
         # For the name, we recommend using the standard shorthand identifier from
@@ -76,13 +77,6 @@ html_context = {
         "url": "",
     },
     # Pass the top-level 'author' value to the HTML base template
-    "author": author,
-    "footer": {
-        "license": True,
-    },
-    # TODO: Uncomment to override Ulwazi's Google Tag Manager container.
-    # Leaving this commented uses the default one.
-    # "tag_id": "GTM-KNX3CJC",
 }
 
 #######################
@@ -215,14 +209,14 @@ exclude_patterns = [
 ]
 
 # Adds custom CSS files, located remotely or in 'html_static_path'.
-# html_css_files = [
-#     "https://assets.ubuntu.com/v1/d86746ef-cookie_banner.css",
-# ]
+html_css_files = [
+    "https://assets.ubuntu.com/v1/d86746ef-cookie_banner.css",
+]
 
 # Adds custom JavaScript files, located remotely or in 'html_static_path'.
-# html_js_files = [
-#     "https://assets.ubuntu.com/v1/287a5e8f-bundle.js",
-# ]
+html_js_files = [
+    "https://assets.ubuntu.com/v1/287a5e8f-bundle.js",
+]
 
 # Appends extra markup to the end of every document written in reST
 # rst_epilog = """
