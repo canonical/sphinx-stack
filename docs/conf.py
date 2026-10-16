@@ -76,7 +76,6 @@ html_context = {
         # TODO: Link directly to your project's license statement.
         "url": "",
     },
-    # Pass the top-level 'author' value to the HTML base template
 }
 
 #######################
