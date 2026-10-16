@@ -11,9 +11,8 @@ import textwrap
 # A complete list of built-in Sphinx configuration values:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 #
-# The Sphinx Stack uses the Canonical Sphinx theme to keep all documentation consistent
-# and on brand:
-# https://github.com/canonical/canonical-sphinx
+# The Sphinx Stack uses the Ulwazi theme:
+# https://github.com/canonical/ulwazi
 
 #######################
 # Project information #
@@ -50,15 +49,13 @@ html_theme = "ulwazi"
 # Dictionary of values to pass into every page's template.
 html_context = {
     # Community links for the 'Resources' dropdown menu.
-    # TODO: Add links your project's community platforms or leave empty to hide
+    # TODO: Add community links; empty values hide individual links.
     "discourse": "",
     "mattermost": "",
     "matrix": "",
-    "github_url": "",
-    # TODO: Uncomment to enable the navigation buttons at the bottom of pages
-    # Valid options are 'none' (default), 'prev', 'next', 'both'
-    # "sequential_nav": "both",
-    # Feedback button configuration (uses `github_url` if set)
+    "github_url": "https://github.com/canonical/sphinx-stack",
+    # Feedback and edit/view links require a valid `github_url`.
+    # TODO: Set to False to hide feedback and page controls.
     "feedback": True,
     # Brand configuration for the leftmost entry in the banner
     # TODO: If your project falls under a different product page, update the title, URL,
@@ -79,14 +76,9 @@ html_context = {
     "author": author,
     "footer": {
         "license": True,
-        # TODO: Uncomment if your project collects Google Analytics
-        # "entries": [
-        #     '<a class="js-revoke-cookie-manager" href="#tracker-settings">',
-        #     "Manage your tracker settings</a>",
-        # ],
     },
-    # Google Analytics tag
-    # TODO: Uncomment if your project collects Google Analytics
+    # TODO: Uncomment to override Ulwazi's Google Tag Manager container.
+    # Leaving this commented uses the default one.
     # "tag_id": "GTM-KNX3CJC",
 }
 
@@ -183,10 +175,6 @@ linkcheck_retries = 3
 
 # Custom MyST syntax extensions; see
 # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html
-# NOTE: By default, the following MyST extensions are enabled:
-#   - substitution
-#   - deflist
-#   - linkify
 # myst_enable_extensions = set()
 
 # Custom Sphinx extensions; see
@@ -242,26 +230,20 @@ exclude_patterns = [
 # https://canonical.com/juju/docs/ops, you'd set this to "juju/docs/ops".
 slug = ""
 
-# Enable PDF builds
+# Apply modern PDF styling and configuration
 set_modern_pdf_config = True
-
-# Feedback button at the top; enabled by default
-# TODO: Disable the button if your project is unsuitable for public feedback.
-# disable_feedback_button = True
 
 # Your manpage URL
 # TODO: To enable manpage links, uncomment and replace {codename} with required
 #       release, preferably an LTS release (e.g. noble). Do *not* substitute
 #       {section} or {page}; these will be replaced by sphinx at build time
 #
-# NOTE: If set, adding ':manpage:' to an .rst file
-#       adds a link to the corresponding man section at the bottom of the page.
+# If set, the :manpage: role creates an inline link to the manual page.
 # manpages_url = 'https://manpages.ubuntu.com/manpages/{codename}/en/' + \
 #     'man{section}/{page}.{section}.html'
 
 # Specifies a reST snippet to be prepended to each .rst file
 # This defines a :center: role that centers table cell content.
-# This defines a :h2: role that styles content for use with PDF generation.
 rst_prolog = """
 .. role:: center
    :class: align-center
