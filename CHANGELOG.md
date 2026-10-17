@@ -1,6 +1,6 @@
 # sphinx-stack changelog
 
-## Upcoming
+## 3.0
 
 * Make removed URL check redirect-aware and add support for reusable workflow contexts
 * Exclude utility directories from builds and checks
@@ -11,12 +11,15 @@
 * Update and pin CI actions
 * Remove extensions deprecated in 2.0
 * Replace remote documentation checks in CI
+* Add default support for the Ulwazi theme
 
 ### Changed
 
-* `docs/conf.py` [#610](https://github.com/canonical/sphinx-stack/pull/610), [#634](https://github.com/canonical/sphinx-stack/pull/634), [#646](https://github.com/canonical/sphinx-stack/pull/646)
+* `docs/conf.py` [#610](https://github.com/canonical/sphinx-stack/pull/610), [#634](https://github.com/canonical/sphinx-stack/pull/634), [#646](https://github.com/canonical/sphinx-stack/pull/646), [#650](https://github.com/canonical/sphinx-stack/pull/650)
 * `docs/Makefile` [#605](https://github.com/canonical/sphinx-stack/pull/605), [#610](https://github.com/canonical/sphinx-stack/pull/610), [#627](https://github.com/canonical/sphinx-stack/pull/627), [#628](https://github.com/canonical/sphinx-stack/pull/628)
-* `docs/requirements.txt` [#634](https://github.com/canonical/sphinx-stack/pull/634), [#646](https://github.com/canonical/sphinx-stack/pull/646)
+* `docs/requirements.txt` [#634](https://github.com/canonical/sphinx-stack/pull/634), [#646](https://github.com/canonical/sphinx-stack/pull/646), [#650](https://github.com/canonical/sphinx-stack/pull/650)
+* `docs/_templates/header.html` [#650](https://github.com/canonical/sphinx-stack/pull/650)
+* `docs/_templates/footer.html` [#650](https://github.com/canonical/sphinx-stack/pull/650)
 * `README.md` [#603](https://github.com/canonical/sphinx-stack/pull/603)
 * `.github/workflows/automatic-doc-checks.yml` [#642](https://github.com/canonical/sphinx-stack/pull/642)
 * `.github/workflows/cla-check.yml` [#606](https://github.com/canonical/sphinx-stack/pull/606), [#648](https://github.com/canonical/sphinx-stack/pull/648)
