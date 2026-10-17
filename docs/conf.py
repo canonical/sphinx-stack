@@ -140,6 +140,9 @@ llms_txt_description = textwrap.dedent(
 # Generate an 'llms-full.txt' file containing all of the documentation content
 llms_txt_full_build = True
 
+# Suppress warnings from upstream markdown builder
+llms_txt_suppress_unknown_node_warnings = True
+
 # The base URL for references built by sphinx-markdown-builder.
 if os.environ.get("READTHEDOCS"):
     markdown_http_base = html_baseurl
