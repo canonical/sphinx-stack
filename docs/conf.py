@@ -137,6 +137,9 @@ llms_txt_description = textwrap.dedent(
     """
 )
 
+# Generate an 'llms-full.txt' file containing all of the documentation content
+llms_txt_full_build = True
+
 # The base URL for references built by sphinx-markdown-builder.
 if os.environ.get("READTHEDOCS"):
     markdown_http_base = html_baseurl
@@ -176,22 +179,16 @@ extensions = [
     "myst_parser",
     "sphinx_design",
     "sphinx_rerediraffe",
-    "sphinx_reredirects",
-    "sphinx_tabs.tabs",
     "sphinxcontrib.jquery",
     "sphinxext.opengraph",
     "sphinx_config_options",
-    "sphinx_contributor_listing",
-    "sphinx_filtered_toctree",
     "sphinx_llm.txt",
     "sphinx_modern_pdf_style",
     "sphinx_related_links",
     "sphinx_roles",
     "sphinx_terminal",
-    "sphinx_ubuntu_images",
     "sphinx_youtube_links",
     "sphinxcontrib.cairosvgconverter",
-    "sphinx_last_updated_by_git",
     "sphinx.ext.intersphinx",
     "sphinx_sitemap",
 ]
