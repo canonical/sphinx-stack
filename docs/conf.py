@@ -169,10 +169,6 @@ linkcheck_retries = 3
 # Configuration extras #
 ########################
 
-# Custom MyST syntax extensions; see
-# https://myst-parser.readthedocs.io/en/latest/syntax/optional.html
-# myst_enable_extensions = set()
-
 # Custom Sphinx extensions; see
 # https://www.sphinx-doc.org/en/master/usage/extensions/index.html
 extensions = [
