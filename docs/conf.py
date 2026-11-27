@@ -171,9 +171,6 @@ linkcheck_anchors_ignore_for_url = [r"https://github\.com/.*"]
 # Give linkcheck multiple tries on failure
 linkcheck_retries = 3
 
-# Report timeouts as 'timeout' rather than 'broken'
-linkcheck_report_timeouts_as_broken = False
-
 ########################
 # Configuration extras #
 ########################
