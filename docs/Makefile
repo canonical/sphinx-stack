@@ -103,7 +103,10 @@ clean-doc:
 	rm -rf $(DEV_DIR)/.doctrees
 
 linkcheck: install
-	. $(DOCS_VENV) ; $(SPHINX_BUILD) -b linkcheck -q "$(DOCS_SOURCEDIR)" "$(DOCS_BUILDDIR)" $(SPHINX_OPTS) || { grep --color -F "[broken]" "$(DOCS_BUILDDIR)/output.txt"; exit 1; }
+	rm -f "$(DOCS_BUILDDIR)/output.txt"
+	. $(DOCS_VENV) ; $(SPHINX_BUILD) -b linkcheck -q "$(DOCS_SOURCEDIR)" "$(DOCS_BUILDDIR)" $(SPHINX_OPTS) || { \
+		test -f "$(DOCS_BUILDDIR)/output.txt" || exit 1; \
+		! grep --color -F "[broken]" "$(DOCS_BUILDDIR)/output.txt"; }
 	exit 0
 
 pa11y: pa11y-install html
