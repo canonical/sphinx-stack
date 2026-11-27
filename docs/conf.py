@@ -171,6 +171,10 @@ linkcheck_anchors_ignore_for_url = [r"https://github\.com/.*"]
 # Give linkcheck multiple tries on failure
 linkcheck_retries = 3
 
+# Report timeouts as 'timeout' rather than 'broken', so a slow host doesn't fail
+# the check (the default changes to this in Sphinx 8)
+linkcheck_report_timeouts_as_broken = False
+
 ########################
 # Configuration extras #
 ########################
