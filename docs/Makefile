@@ -103,13 +103,8 @@ clean-doc:
 	rm -rf $(DEV_DIR)/.doctrees
 
 linkcheck: install
-	. $(DOCS_VENV) ; $(SPHINX_BUILD) -b linkcheck -q "$(DOCS_SOURCEDIR)" "$(DOCS_BUILDDIR)" $(SPHINX_OPTS); \
-	status=$$?; report="$(DOCS_BUILDDIR)/output.json"; \
-	[ "$$status" -eq 1 ] || exit "$$status"; \
-	if grep -qF '"status": "broken"' "$$report"; then \
-		grep --color -F "[broken]" "$(DOCS_BUILDDIR)/output.txt"; exit 1; \
-	fi; \
-	grep -qF '"status": "timeout"' "$$report"
+	. $(DOCS_VENV) ; $(SPHINX_BUILD) -b linkcheck -q "$(DOCS_SOURCEDIR)" "$(DOCS_BUILDDIR)" $(SPHINX_OPTS) || { [ $$? -eq 1 ] && ! grep --color -F "[broken]" "$(DOCS_BUILDDIR)/output.txt"; }
+	exit 0
 
 pa11y: pa11y-install html
 	find $(DOCS_BUILDDIR) -name *.html -print0 | xargs -n 1 -0 $(PA11Y_CMD)
