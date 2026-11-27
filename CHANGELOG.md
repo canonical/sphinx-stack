@@ -17,7 +17,7 @@
 
 * `docs/conf.py` [#610](https://github.com/canonical/sphinx-stack/pull/610), [#634](https://github.com/canonical/sphinx-stack/pull/634), [#646](https://github.com/canonical/sphinx-stack/pull/646), [#650](https://github.com/canonical/sphinx-stack/pull/650), [#651](https://github.com/canonical/sphinx-stack/pull/651)
 * `docs/Makefile` [#605](https://github.com/canonical/sphinx-stack/pull/605), [#610](https://github.com/canonical/sphinx-stack/pull/610), [#627](https://github.com/canonical/sphinx-stack/pull/627), [#628](https://github.com/canonical/sphinx-stack/pull/628)
-* `docs/requirements.txt` [#634](https://github.com/canonical/sphinx-stack/pull/634), [#646](https://github.com/canonical/sphinx-stack/pull/646), [#650](https://github.com/canonical/sphinx-stack/pull/650)
+* `docs/requirements.txt` [#634](https://github.com/canonical/sphinx-stack/pull/634), [#646](https://github.com/canonical/sphinx-stack/pull/646), [#650](https://github.com/canonical/sphinx-stack/pull/650), [#655](https://github.com/canonical/sphinx-stack/pull/655)
 * `docs/_templates/header.html` [#650](https://github.com/canonical/sphinx-stack/pull/650)
 * `docs/_templates/footer.html` [#650](https://github.com/canonical/sphinx-stack/pull/650)
 * `README.md` [#603](https://github.com/canonical/sphinx-stack/pull/603)
